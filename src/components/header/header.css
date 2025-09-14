@@ -1,0 +1,64 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 48px;
+  background: #fff;
+  color: #000;
+  max-width: 100%;
+  font-family: 'Lexend Deca', sans-serif;
+}
+.header-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.header-nav a {
+  color: #0e88ad;
+  margin-left: 32px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.2s;
+  font-weight: 600;
+}
+.header-nav a:hover {
+  color: #ffd700;
+}
+
+.header-nav a {
+  color: #222;
+  margin-left: 32px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.2s, border-bottom 0.2s;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+.header-nav a.active {
+  color: #0e88ad;
+  border-bottom: 2px solid #0e88ad;
+  font-weight: bold;
+}
+.header-nav a.inactive {
+  color: #222;
+  border-bottom: 2px solid transparent;
+}
+.header-nav a:hover {
+  /* color: #ffd700; */
+}
+
+.header-phone-btn {
+  margin-left: 32px;
+  color: #0e88ad;
+  border: 1px solid #0e88ad;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.header-phone-btn:hover {
+  background: #5bb3d6;
+}
