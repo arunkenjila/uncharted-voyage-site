@@ -15,18 +15,27 @@
   height: 300px;
 }
 
+.explore-ne-hero {
+  /* keep hero content grouped and allow shifting up */
+  display: inline-block;
+  max-width: 720px;
+  transform: translateY(-18px);
+}
+
 .explore-ne-title {
   font-size: 2.5rem;
   font-weight: bold;
   color: #fff;
   margin-bottom: 18px;
+   margin: 5px 0;
   text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 
 .explore-ne-subtitle {
   font-size: 1.3rem;
   color: #fff;
-  margin-bottom: 32px;
+  /* margin-bottom: 32px; */
+  margin: 5px 0;
   text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 
@@ -95,6 +104,12 @@
     padding: 32px 8px 24px 8px;
     max-width: 98vw;
   }
+  .explore-ne-hero {
+    max-width: 90%;
+    transform: translateY(-28px);
+    text-align: center;
+    margin: 0 auto;
+  }
   .explore-ne-cards {
     gap: 18px;
   }
@@ -102,5 +117,26 @@
     width: 95vw;
     max-width: 320px;
     height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .explore-ne-bg {
+    height: auto;
+    padding: 20px 12px 16px 12px;
+  }
+  .explore-ne-hero {
+    transform: translateY(-36px);
+    padding: 8px 4px;
+  }
+  .explore-ne-title {
+    font-size: 1.6rem;
+  }
+  .explore-ne-subtitle {
+    font-size: 1rem;
+    margin-bottom: 18px;
+  }
+  .explore-ne-btn {
+    padding: 10px 24px;
   }
 }

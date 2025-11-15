@@ -1,16 +1,27 @@
 
 .App {
-	width: 100vw;
-	min-width: 100vw;
+	width: 100%;
 	margin: 0;
 	padding: 0;
+}
+
+/* global reset and prevent horizontal scroll */
+*, *::before, *::after {
 	box-sizing: border-box;
 }
 
-body, html {
-	width: 100vw;
-	min-width: 100vw;
+html, body {
+	width: 100%;
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+	overflow-x: hidden; /* prevent horizontal scrollbar caused by 100vw or overflowing elements */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Make images/videos responsive */
+img, picture, video, iframe, svg {
+	max-width: 100%;
+	height: auto;
+	display: block;
 }

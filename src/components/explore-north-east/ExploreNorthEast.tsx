@@ -17,11 +17,13 @@ const states = [
 const ExploreNorthEast: React.FC = () => (
   <section className="explore-north-east">
     <div className="explore-ne-bg">
-      <h2 className="explore-ne-title">Explore Northeast India</h2>
-      <p className="explore-ne-subtitle">
-        A journey through Culture, People and Nature
-      </p>
-      <button className="explore-ne-btn">Explore</button>
+      <div className="explore-ne-hero">
+        <h2 className="explore-ne-title">Explore Northeast India</h2>
+        <p className="explore-ne-subtitle">
+          A journey through Culture, People and Nature
+        </p>
+        <button className="explore-ne-btn">Explore</button>
+      </div>
     </div>
     <div className="explore-ne-cards">
       {states.map((state, idx) => (

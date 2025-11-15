@@ -123,3 +123,27 @@
   font-weight: 600;
   margin-bottom: 24px;
 }
+
+/* Responsive: two columns on small screens, one column on very small screens */
+@media (max-width: 900px) {
+  .explore-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 12px 16px;
+    margin-bottom: 24px;
+    width: 100%;
+    justify-items: center;
+  }
+  .explore-card {
+    width: 100%;
+    max-width: 320px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 431px) {
+  .explore-cards {
+    grid-template-columns: 1fr;
+  }
+}

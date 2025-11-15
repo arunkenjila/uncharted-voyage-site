@@ -70,3 +70,24 @@
   left: 0;
   bottom: 0;
 }
+
+/* Responsive: show cards in two columns on mobile */
+@media (max-width: 900px) {
+  .why-us-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    justify-items: center;
+    padding: 0 16px;
+  }
+  .why-us-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 420px) {
+  .why-us-cards {
+    grid-template-columns: 1fr;
+  }
+}
