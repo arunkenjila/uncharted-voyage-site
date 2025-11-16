@@ -1,4 +1,4 @@
-import logo from "../../assets/react.svg";
+import logo from "../../assets/uvlogo2.png";
 import "./ContactUs.css";
 
 const ContactUs: React.FC = () => {

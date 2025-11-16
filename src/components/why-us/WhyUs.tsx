@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./WhyUs.css";
 
 const whyUsCards = [
@@ -28,21 +28,45 @@ const whyUsCards = [
   },
 ];
 
-const WhyUs: React.FC = () => (
-  <section className="why-us">
-    <h2 className="why-us-title">Why Uncharted Voyage?</h2>
-    <div className="why-us-cards">
-      {whyUsCards.map((card, idx) => (
-        <div className="why-us-card" key={idx}>
-          <div className="why-us-card-title">{card.title}</div>
-          <div className="why-us-card-desc">{card.description}</div>
-          <div className="why-us-card-icon-wrap">
-            <span className="why-us-card-icon">{card.icon}</span>
+const WhyUs: React.FC = () => {
+  const ref = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            el.classList.add("in-view");
+            obs.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  return (
+    <section ref={ref} className="why-us">
+      <h2 className="why-us-title">Why Uncharted Voyage?</h2>
+      <div className="why-us-cards">
+        {whyUsCards.map((card, idx) => (
+          <div className="why-us-card" key={idx}>
+            <div className="why-us-card-title">{card.title}</div>
+            <div className="why-us-card-desc">{card.description}</div>
+            <div className="why-us-card-icon-wrap">
+              <span className="why-us-card-icon">{card.icon}</span>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
-  </section>
-);
+        ))}
+      </div>
+    </section>
+  );
+};
 
 export default WhyUs;

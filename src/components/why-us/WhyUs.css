@@ -18,6 +18,12 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+/* allow animated cards to move outside card box if needed */
+.why-us-cards,
+.why-us-card {
+  overflow: visible;
+}
 .why-us-card {
   background: #fff;
   border-radius: 16px;
@@ -30,6 +36,11 @@
   position: relative;
   padding: 32px 24px 48px 24px;
   border: 1px solid #12a5cd;
+}
+/* start hidden; will animate into view when parent gets .in-view */
+.why-us-card {
+  opacity: 0;
+  transform: translateZ(0);
 }
 .why-us-card-title {
   font-size: 1.4rem;
@@ -89,5 +100,50 @@
 @media (max-width: 420px) {
   .why-us-cards {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Entrance animations: two from left, two from right */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px) translateZ(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateZ(0);
+  }
+}
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px) translateZ(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateZ(0);
+  }
+}
+
+/* apply to first two and next two cards; stagger delays */
+.why-us.in-view .why-us-card:nth-child(1) {
+  animation: slideInLeft 600ms cubic-bezier(.2,.9,.2,1) 120ms both;
+}
+.why-us.in-view .why-us-card:nth-child(2) {
+  animation: slideInLeft 600ms cubic-bezier(.2,.9,.2,1) 260ms both;
+}
+.why-us.in-view .why-us-card:nth-child(3) {
+  animation: slideInRight 600ms cubic-bezier(.2,.9,.2,1) 120ms both;
+}
+.why-us.in-view .why-us-card:nth-child(4) {
+  animation: slideInRight 600ms cubic-bezier(.2,.9,.2,1) 260ms both;
+}
+
+/* Respect user reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .why-us-card {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import "./header.css";
-import logo from "../../assets/react.svg";
+import logo from "../../assets/uvlogo.png";
 
 import { useState, useEffect } from "react";
 
@@ -30,8 +30,8 @@ const Header: React.FC = () => {
           src={logo}
           alt="Uncharted Voyage Logo"
           className="contact-us-logo"
-          height={40}
-          width={40}
+          height={70}
+          width={70}
         />
       </div>
       <nav className="header-nav">
