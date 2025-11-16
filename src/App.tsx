@@ -10,9 +10,6 @@ import ExploreNorthEast from "./components/explore-north-east/ExploreNorthEast";
 function App() {
   return (
     <>
-      <h1 className="sr-only">
-        Uncharted Voyage — Explore Northeast India and Hornbill Festival
-      </h1>
       <Header />
       <Banner />
       <Explore />
