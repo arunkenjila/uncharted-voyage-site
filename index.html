@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/src/assets/uvlogo3.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Uncharted Voyage" />
@@ -37,8 +37,67 @@
       name="twitter:description"
       content="Curated tours across Northeast India including the Hornbill Festival — local experiences, safe bookings, and expert guides."
     />
+    <!-- Image for social previews: place an image at `/og-image.svg` or update URL -->
+    <meta property="og:image" content="/og-image.svg" />
+    <meta name="twitter:image" content="/og-image.svg" />
     <meta name="theme-color" content="#ffffff" />
     <title>Explore Northeast India with Uncharted Voyage</title>
+    <!-- LocalBusiness JSON-LD (replace placeholders with real data) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "Uncharted Voyage",
+        "url": "https://example.com/",
+        "logo": "https://example.com/logo.png",
+        "telephone": "+91-XXXXXXXXXX",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Your street address",
+          "addressLocality": "City",
+          "addressRegion": "State",
+          "postalCode": "PIN",
+          "addressCountry": "IN"
+        },
+        "sameAs": [
+          "https://facebook.com/your-page",
+          "https://instagram.com/your-page",
+          "https://twitter.com/your-page"
+        ]
+      }
+    </script>
+    <!-- Hornbill Festival Event JSON-LD (replace dates/venue/url as needed) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Hornbill Festival 2025",
+        "startDate": "2025-12-01",
+        "endDate": "2025-12-10",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Naga Heritage Village, Kisama",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Kisama",
+            "addressLocality": "Kohima",
+            "addressRegion": "Nagaland",
+            "addressCountry": "IN"
+          }
+        },
+        "image": ["/og-image.svg"],
+        "description": "Hornbill Festival 2025 — a vibrant celebration of Naga culture, music, dance and crafts. Join curated tours with Uncharted Voyage.",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://example.com/hornbill-festival",
+          "price": "9999",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
